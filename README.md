@@ -1,70 +1,227 @@
-# Getting Started with Create React App
+# 📘 Plateforme pédagogique OFPPT – Examens & Cours
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🧾 Présentation du projet
 
-## Available Scripts
+Ce projet est une **application web pédagogique** développée dans le cadre d’un **projet de fin de formation OFPPT**.
 
-In the project directory, you can run:
+L’objectif principal est de **faciliter l’accès aux examens (EFM, EFF, CC)** et aux **supports de cours** pour les stagiaires de l’OFPPT, afin de :
 
-### `npm start`
+- Gagner du temps dans la recherche des examens
+- Centraliser les ressources pédagogiques
+- Aider les stagiaires à mieux se préparer aux évaluations
+- Améliorer l’autonomie dans l’apprentissage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Cette plateforme est destinée principalement aux **stagiaires OFPPT**, mais peut également être utile aux **formateurs**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎯 Objectifs pédagogiques
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Mettre en pratique les compétences acquises en **React.js**
+- Consommer une **API REST**
+- Gérer la navigation avec **React Router**
+- Manipuler des données dynamiques (filières, modules, examens)
+- Télécharger et consulter des fichiers PDF
+- Créer une application claire, ergonomique et utile
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Fonctionnalités principales
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ✅ Navigation hiérarchique
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+L’utilisateur peut naviguer de manière simple et logique :
 
-### `npm run eject`
+1. Années de formation
+2. Filières
+3. Modules
+4. Ressources pédagogiques
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📂 Ressources disponibles
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Pour chaque module ou filière, l’application permet d’accéder à :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- 📘 **Cours** (PDF)
+- 📝 **Contrôles continus (CC)**
+- 📄 **Examens de fin de module (EFM)**
+- 🏁 **Examens de fin de formation (EFF)**
 
-## Learn More
+Chaque ressource est affichée sous forme de carte avec :
+- Titre
+- Description
+- Bouton de téléchargement
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ⬇️ Téléchargement des fichiers
 
-### Code Splitting
+Les fichiers sont fournis via une API et stockés publiquement.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👉 Lorsqu’un utilisateur clique sur le bouton **Télécharger**, le fichier PDF est directement téléchargé depuis le serveur.
 
-### Analyzing the Bundle Size
+📌 **Exemple de lien utilisé** :
+```
+https://podo.b1.ma/storage/effs/eff2024.pdf
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> ℹ️ Les liens des fichiers sont générés dynamiquement à partir de la propriété `file_path` retournée par l’API.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🌙 Mode sombre / mode clair
 
-### Advanced Configuration
+L’utilisateur peut activer ou désactiver le **mode sombre** pour améliorer le confort visuel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🛠️ Technologies utilisées
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Frontend
+- ⚛️ **React.js**
+- 📦 React Hooks (`useState`, `useEffect`, `useCallback`)
+- 🧭 React Router DOM
+- 🎨 Bootstrap / CSS
 
-### `npm run build` fails to minify
+### Backend (API)
+- 🔗 API REST fournie
+- 🌐 Endpoints publics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Outils
+- 🧰 Git & GitHub
+- 🧪 Navigateur (Chrome / Firefox)
+
+---
+
+## 🔌 API utilisée
+
+L’application consomme plusieurs endpoints API.
+
+### Exemple : Récupérer les EFF par filière
+
+```
+GET https://podo.b1.ma/api/public/filieres/{filiere_id}/effs
+```
+
+### Réponse JSON :
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "title": "EFF 2024",
+      "file_path": "/storage/effs/eff2024.pdf"
+    }
+  ]
+}
+```
+
+---
+
+## 📁 Structure du projet
+
+```
+edu-react/
+│
+├── src/
+│   ├── components/
+│   │   ├── ExamsPage.jsx
+│   │   └── ...
+│   ├── services/
+│   │   └── api.js
+│   ├── contexts/
+│   │   └── AppContext.jsx
+│   ├── hooks/
+│   │   └── useFetch.js
+│   └── App.jsx
+│
+├── public/
+├── package.json
+└── README.md
+```
+
+---
+
+## 🚀 Installation et lancement
+
+### 1️⃣ Cloner le projet
+
+```bash
+git clone https://github.com/VOTRE-USERNAME/edu-react.git
+cd edu-react
+```
+
+👉 **Remplacez ce lien par le lien de votre dépôt GitHub**.
+
+---
+
+### 2️⃣ Installer les dépendances
+
+```bash
+npm install
+```
+
+---
+
+### 3️⃣ Lancer l’application
+
+```bash
+npm start
+```
+
+ou avec Vite :
+```bash
+npm run dev
+```
+
+---
+
+## 👨‍🎓 Public cible
+
+Ce projet est destiné à :
+
+- 🎓 Stagiaires de l’OFPPT
+- 📚 Étudiants souhaitant réviser rapidement
+- 🧑‍🏫 Formateurs
+
+Il permet de **trouver rapidement les examens** et de **se préparer efficacement** aux évaluations.
+
+---
+
+## 🏫 Contexte OFPPT
+
+Ce projet a été réalisé dans un cadre **pédagogique** afin de :
+
+- Valider les compétences techniques
+- Répondre à un besoin réel des stagiaires
+- Proposer une solution utile et évolutive
+
+---
+
+## 🔮 Améliorations possibles
+
+- Authentification utilisateur
+- Historique des téléchargements
+- Recherche avancée par mot-clé
+- Ajout de vidéos pédagogiques
+- Version mobile
+
+---
+
+## 👤 Auteur
+
+- **Nom** : *MOHAMED TOLBIX*
+- **Filière** : Développement Digital OPTION WEP FULL STACK
+- **Établissement** : OFPPT
+- **Année** : 2025 / 2026
+
+---
+
+## 📜 Licence
+
+Projet à usage pédagogique.
+
+© OFPPT – Tous droits réservés.
+
