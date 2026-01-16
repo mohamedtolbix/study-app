@@ -15,7 +15,7 @@ const YearsPage = memo(() => {
   };
 
   const getYearIcon = (index) => {
-    const icons = ['looks_one', 'looks_two', 'looks_3', 'looks_4'];
+    const icons = ['looks_one', 'looks_two', 'looks_3','looks_one', 'looks_two', 'looks_3'];
     return icons[index] || 'school';
   };
 
