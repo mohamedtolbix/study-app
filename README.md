@@ -5,7 +5,7 @@
 Une version de démonstration de l’application est disponible en ligne afin de permettre aux stagiaires et formateurs de tester les fonctionnalités sans installer le projet en local.
 
 👉 **Accéder au site de démonstration :**  
-[https://facebook.com](demo)
+[demo](https://facebook.com)
 
 ### Objectif de la démo
 La version de démonstration permet de :
@@ -28,6 +28,7 @@ L’objectif principal est de **faciliter l’accès aux examens (EFM, EFF, CC)*
 Cette plateforme est destinée principalement aux **stagiaires OFPPT**, mais peut également être utile aux **formateurs**.
 
 ---
+
 
 ## 🎯 Objectifs pédagogiques
 
@@ -101,6 +102,7 @@ L’utilisateur peut activer ou désactiver le **mode sombre** pour améliorer l
 ### Backend (API)
 - 🔗 API REST fournie
 - 🌐 Endpoints publics
+
 
 ### Outils
 - 🧰 Git & GitHub
