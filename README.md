@@ -5,12 +5,12 @@
 Une version de démonstration de l’application est disponible en ligne afin de permettre aux stagiaires et formateurs de tester les fonctionnalités sans installer le projet en local.
 
 👉 **Accéder au site de démonstration :**  
-[https://TON-LIEN-DEMO-ICI](https://TON-LIEN-DEMO-ICI)
+[https://facebook.com](demo)
 
 ### Objectif de la démo
 La version de démonstration permet de :
 - 📚 Consulter les **cours** par filière et module  
-- 📝 Accéder aux **examens** (CC, EFM, EFF)  
+- 📝 Accéder aux **examens** ( CC, EFM, EFF)  
 - 📄 Ouvrir et télécharger les fichiers **PDF** directement  
 - 🎓 Aider les stagiaires OFPPT à **préparer leurs examens** plus facilement  
 
